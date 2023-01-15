@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room Reservation</title>
+
+    {% load static %} <link rel="stylesheet" href="{% static 'conference/style.css'%} " type="text/css"/>
+    {% load static %}<script src="{% static 'conference/time.js'%} "></script>
+
+</head>
+<body onload="timer()">
+
+<div id ="container">
+
+    <div class="rectangle">
+        <a href="/" class="tilelink"><div id = logo>Luxury Conferences</div></a>
+        <div id  ="zegar">00:00:00</div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="rectangle1">List of available rooms</div>
+
+    <div class="square2">
+        <form method ="post">
+            <table >
+            {% csrf_token %}
+                {% for r in rooms %}
+                   <td>
+                   <ul>Room name:<a href="/room/{{ r.id }}/">{{ r.name }}</a></ul>
+                       <ul>Capacity: {{ r.capacity }}</ul>
+                       <ul> {% if r.projector == True %} Projector available {% else %} Projector unavailable {% endif %}</ul>
+                    <ul><a href="/room/modify/{{ r.id }}/">edit</a>
+                    <a href="/room/delete/{{ r.id }}/">delete</a>
+                    <a href="/room/reserve/{{ r.id }}/">reserve</a></ul>
+                    FREE TERMS!
+                    </td>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+
+    <div style="clear:both;">
+		</div>
+    <div class="rectangle">Designed and Created by Krzysztof Piatek</div>
+
+</div>
+
+</body>
+</html>

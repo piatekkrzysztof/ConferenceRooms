@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room Reservation</title>
+
+    {% load static %} <link rel="stylesheet" href="{% static 'conference/style.css'%} " type="text/css"/>
+    {% load static %}<script src="{% static 'conference/time.js'%} "></script>
+
+</head>
+<body onload="timer()">
+
+<div id ="container">
+
+    <div class="rectangle">
+        <a href="/" class="tilelink"><div id = logo>Luxury Conferences</div></a>
+        <div id  ="zegar">00:00:00</div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="rectangle1">List of available rooms</div>
+
+    <div class="square2">
+        <form method ="post">
+            <table class="table" >
+            {% csrf_token %}
+            {% for r in rooms %}
+                <tr><td></td></tr>
+                <tr><td><br>Room name:<a href="/room/{{ r.id }}/">{{ r.name }}</a></td></tr>
+                <tr><td>Capacity: {{ r.capacity }}</td></tr>
+                <tr><td>{% if r.projector == True %} Projector available {% else %} Projector unavailable {% endif %}</td></tr>
+                <tr><td></td></tr>
+                <tr><td>FREE TERMS!<br></td></tr>
+                <tr><td><div class="options"><a href="/room/modify/{{ r.id }}/">edit</a>
+                    <a href="/room/delete/{{ r.id }}/">delete</a>
+                    <a href="/room/reserve/{{ r.id }}/">reserve</a></div></td></tr>
+
+
+            {% endfor %}
+            </table>
+        </form>
+    </div>
+
+    <div style="clear:both;">
+		</div>
+    <div class="rectangle">Designed and Created by Krzysztof Piatek</div>
+
+</div>
+
+</body>
+</html>
