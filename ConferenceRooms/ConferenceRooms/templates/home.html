@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room Reservation</title>
+
+    {% load static %} <link rel="stylesheet" href="{% static 'conference/style.css'%} " type="text/css"/>
+    {% load static %}<script src="{% static 'conference/time.js'%} "></script>
+
+</head>
+<body onload="timer()">
+
+<div id ="container">
+
+    <div class="rectangle">
+        <a href="/" class="tilelink"><div id = logo>Luxury Conferences</div></a>
+        <div id  ="zegar">00:00:00</div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="rectangle1">
+        What do you want to do?
+    </div>
+
+    <div class="square">
+        <a href="room/all/" class="tilelink"><div class ="logo1">Reserve your room</div></a>
+        {% load static %} <a href="room/all/" class="tilelink"><div class="image"><img src="{% static 'conference/room.jpg'%}" alt="room" width="560" height="600"></div></a>
+    </div>
+    <div class="square1">
+        <a href="/room/new/" class="tilelink"><div class ="logo1">Make new room</div></a>
+        {% load static %} <a href="/room/new/" class="tilelink"><div class="image"><img src="{% static 'conference/man.jpg'%}" alt="walking man" width="560" height="600"></div></a>
+    </div>
+    <div style="clear:both;">
+		</div>
+    <a href="room/search/" class="tilelink"><div class="searching">Search</div></a>
+    <div class="rectangle">Designed and Created by Krzysztof Piatek</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room Reservation</title>
+
+    {% load static %} <link rel="stylesheet" href="{% static 'conference/style.css'%} " type="text/css"/>
+    {% load static %}<script src="{% static 'conference/time.js'%} "></script>
+
+</head>
+<body onload="timer()">
+
+<div id ="container">
+
+    <div class="rectangle">
+        <a href="/" class="tilelink"><div id = logo>Luxury Conferences</div></a>
+        <div id  ="zegar">00:00:00</div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="rectangle1">Insert information about new room</div>
+
+    <div class="square">
+        <p>Podałeś błędne dane!{{ error }} <a href="" class="tilelink">spróbuj ponownie></a></p>
+
+    </div>
+
+    <div style="clear:both;">
+		</div>
+    <div class="rectangle">Designed and Created by Krzysztof Piatek</div>
+
+</div>
+
+</body>
+</html>

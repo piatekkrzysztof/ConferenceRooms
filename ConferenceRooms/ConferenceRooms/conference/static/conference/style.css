@@ -1,0 +1,111 @@
+body
+{
+    background-image: url(rainforest.jpg);
+    color: goldenrod;
+    font-size:30px;
+
+}
+#container{
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: antiquewhite;
+}
+.rectangle{
+    width: 1160px;
+    text-align: center;
+    background-color: darkolivegreen;
+    padding: 20px;
+}
+.rectangle1
+{
+    text-align: center;
+    font-size:50px;
+    padding: 10px;
+}
+.searching {
+    color:goldenrod;
+    font-size:30px;
+}
+.square
+{
+    width: 50%;
+    float:left;
+    text-align: center;
+
+}
+.square1
+{
+    width: 50%;
+    float:right;
+    text-align: center;
+
+}
+.square2
+{
+
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+
+}
+
+.options
+{
+    background-color: darkolivegreen;
+    color: goldenrod;
+}
+
+
+
+
+
+#logo
+{
+    color: goldenrod;
+    float:left;
+    font-size: 70px;
+    width: 600px;
+    margin-top:10px;
+    margin-bottom:10px;
+    text-align: left;
+}
+#logo:hover
+{
+    color: darkgoldenrod;
+    cursor:pointer;
+}
+
+
+#zegar
+{
+    float:right;
+    font-size: 70px;
+    margin-top:10px;
+    margin-bottom:10px;
+    text-align: left;
+}
+.logo1
+{
+    color: goldenrod;
+    font-size: 30px;
+    width: 600px;
+    margin-top:10px;
+    margin-bottom:10px;
+    text-align: center;
+}
+
+.logo1:hover
+{
+    color: darkgoldenrod;
+    cursor:pointer;
+}
+.image
+{
+    margin: 20px;
+    width:560px;
+    height: 600px;
+
+}

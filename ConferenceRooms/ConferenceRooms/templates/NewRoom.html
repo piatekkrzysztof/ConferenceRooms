@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Room Reservation</title>
+
+    {% load static %} <link rel="stylesheet" href="{% static 'conference/style.css'%} " type="text/css"/>
+    {% load static %}<script src="{% static 'conference/time.js'%} "></script>
+
+</head>
+<body onload="timer()">
+
+<div id ="container">
+
+    <div class="rectangle">
+        <a href="/" class="tilelink"><div id = logo>Luxury Conferences</div></a>
+        <div id  ="zegar">00:00:00</div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="rectangle1">Insert information about new room</div>
+
+    <div class="square2">
+        <form method ="post">
+            {% csrf_token %}
+            <label for ="name">Room name: <br> </label><input type="text" name="name" id="name"><br>
+            <label for="cap">How many people can enter the room :<br> </label><input type="number" name="cap" id="cap"><br>
+            <label for="projector">Is projector available :<br></label><select name="projector" id="projector">
+                <option value="1">Tak</option>
+                <option value="0">Nie</option>
+            </select><br>
+            <input type="submit">
+        </form>
+    </div>
+
+    <div style="clear:both;">
+		</div>
+    <div class="rectangle">Designed and Created by Krzysztof Piatek</div>
+
+</div>
+
+</body>
+</html>
